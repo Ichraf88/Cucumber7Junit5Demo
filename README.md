@@ -1,34 +1,39 @@
-# Integration of Cucumber 7 with Selenium and JUnit 5
+# Cucumber7JUnit5Demo (Selenium + Cucumber 7 + JUnit 5)
 
-This project is a sample application demonstrating how to set up and run **Cucumber tests** using **Selenium** and **JUnit 5**.
+Framework d’automatisation **UI** basé sur :
+- **Selenium WebDriver**
+- **Cucumber (BDD)**
+- **JUnit 5 (JUnit Platform)**
+- **Maven**
+- (Optionnel) **ExtentReports** pour les rapports
 
----
-
-## 🧪 Project Overview
-
-The goal of this framework is to provide a clean and simple setup for:
-- Writing BDD tests with **Cucumber**
-- Executing tests with **JUnit Jupiter (JUnit 5)**
-- Automating web tests using **Selenium**
-- Managing dependencies and build lifecycle with **Maven**
+Ce projet contient des scénarios Cucumber (ex: Login OrangeHRM demo) et une structure “Actions / Locators / Step Definitions” pour garder un code propre et maintenable.
 
 ---
 
-## 🛠️ Tech Stack
-
-The framework is built with the following technologies:
-
-- **Cucumber**: `7.14.0`
-- **Java**: `17`
-- **JUnit Jupiter**: `5.10.1`
-- **Maven**: `3.9.5`
-- **Selenium**: `4.15.0`
+## ✅ Stack technique
+- Java (recommandé **11+**)
+- Maven
+- Selenium
+- Cucumber 7
+- JUnit 5 (JUnit Platform)
+- WebDriverManager (si utilisé) pour gérer les drivers automatiquement
 
 ---
 
-## ▶️ Run Tests from Command Line
-
-To execute the tests using Maven, run the following command:
-
-```bash
-mvn clean verify 
+## 📁 Structure du projet
+src
+├─ main
+│ └─ java
+│ └─ com.example
+│ ├─ actions # Actions / Page Actions (ex: LoginPageActions)
+│ ├─ locations # Locators / Page Objects (ex: LoginPageLocators)
+│ └─ utils # Helpers (ex: HelperClass)
+└─ test
+├─ java
+│ └─ com.example
+│ ├─ definitions # Step Definitions + Hooks (ex: LoginPageDefinitions, Hooks)
+│ └─ runner # Runner JUnit (ex: CucumberRunnerTests)
+└─ resources
+├─ features # Fichiers .feature (ex: LoginPage.feature)
+└─ junit-platform.properties
