@@ -35,9 +35,22 @@ public class LoginPageActions {
     public String getErrorMessage(){
         return loginPageLocators.errorMsg.getText();
     }
+    // LinkedInIcon is displayed
+    public boolean getLinkedInIcon(){
+        return  loginPageLocators.linkdInIcon.isDisplayed();
+    }
 
-    public void login (String StrUserName, String StrPassWord){
-        //fill UserName
+    //FaceBookIcon is displayed
+    public boolean getFaceBookIcon(){
+        return  loginPageLocators.facebookIcon.isDisplayed();
+    }
+
+    //Click on ForgetPaaword
+    public void  clickOnForgotPW(){
+        loginPageLocators.forgotPwButton.click();
+    }
+
+    public void login (String StrUserName, String StrPassWord){//fill UserName
         this.setUserName(StrUserName);
         //Fill Password
         this.setPassWord(StrPassWord);

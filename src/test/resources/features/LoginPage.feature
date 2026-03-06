@@ -31,4 +31,4 @@ Feature: Login to HRM Application
   @ForgetPassword
   Scenario: Verify Forget Password Link On Login Page
     When User clicks on forgot your password link
-    Then User should navigate to new Page
+    Then User should navigate to new Page "Reset Password"

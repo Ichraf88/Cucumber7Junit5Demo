@@ -1,5 +1,6 @@
 package com.example.definitions;
 
+import com.example.actions.ForgotPasswordActions;
 import com.example.actions.HomePageActions;
 
 import com.example.actions.LoginPageActions;
@@ -16,6 +17,7 @@ public class LoginPageDefinitions {
     HomePageActions homePageActions = new HomePageActions();
     ConfigFileReader configFileReader = new ConfigFileReader();
     LoginPageActions loginPageActions = new LoginPageActions();
+    ForgotPasswordActions forgotPasswordActions = new ForgotPasswordActions();
 
     // ========== BACKGROUND ==========
 
@@ -48,24 +50,24 @@ public class LoginPageDefinitions {
 
     @Then("User should be able to see FaceBook Icon")
     public void userShouldBeAbleToSeeFaceBookIcon() {
-        // TODO: implement step
+        Assertions.assertTrue(loginPageActions.getFaceBookIcon());
     }
 
     @Then("User should be able to see LinkedIn Icon")
     public void userShouldBeAbleToSeeLinkedInIcon() {
-        // TODO: implement step
+        Assertions.assertTrue(loginPageActions.getLinkedInIcon());
     }
 
     // ========== FORGOT PASSWORD ==========
 
     @When("User clicks on forgot your password link")
     public void userClicksOnForgotYourPasswordLink() {
-        // TODO: implement step
+       loginPageActions.clickOnForgotPW();
     }
 
-    @Then("User should navigate to new Page")
-    public void userShouldNavigateToNewPage() {
-        // TODO: implement step
+    @Then("User should navigate to new Page {string}")
+    public void userShouldNavigateToNewPage(String rstPw) {
+       Assertions.assertTrue(forgotPasswordActions.getforgotPwMssg().contains("Reset Password"));
     }
 
 }

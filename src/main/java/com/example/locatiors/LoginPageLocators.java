@@ -20,5 +20,14 @@ public class LoginPageLocators {
     @FindBy(css = ".oxd-text.oxd-text--p.oxd-alert-content-text")
     public WebElement errorMsg;
 
+    @FindBy(xpath = "//a[@href='https://www.linkedin.com/company/orangehrm/mycompany/']//*[name()='svg']")
+    public WebElement linkdInIcon;
+
+    @FindBy(xpath = "//a[@href='https://www.facebook.com/OrangeHRM/']//*[name()='svg']")
+    public WebElement facebookIcon;
+
+    @FindBy(css = ".oxd-text.oxd-text--p.orangehrm-login-forgot-header")
+    public WebElement forgotPwButton;
+
 
 }
